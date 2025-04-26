@@ -1,0 +1,195 @@
+\doxysection{Token Classification}
+\hypertarget{group___token_classification}{}\label{group___token_classification}\index{Token Classification@{Token Classification}}
+
+
+Token type definitions and classification utilities.  
+
+
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___token_classification_ga7ac19a0663b9c765db258c8d30754aba}\label{group___token_classification_ga7ac19a0663b9c765db258c8d30754aba} 
+typedef enum \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}} {\bfseries tokcat\+\_\+e}
+\item 
+\Hypertarget{group___token_classification_ga2c88d2b664bce8b2db2fe99545e062af}\label{group___token_classification_ga2c88d2b664bce8b2db2fe99545e062af} 
+typedef enum \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} {\bfseries tok\+\_\+e}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}} \{ \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982ab8bb5c07c737048df5efca7b46285c57}{PRE\+\_\+\+PROC}}
+, \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982aaf54c87377eae7f271a3808cd41a6d41}{SYMBOLS}}
+, \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a01168ce90eea67d7bb43776fb0c139e5}{LITERAL}}
+, \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a2787ddbffe1e8c333e9259f42accc35e}{NFKI\+\_\+\+LITERAL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Token category enumeration for categorizing different token types in the pre-\/processing phase. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} \{ \newline
+\mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a129281444e94f5f509cba213d51a814d}{KEYWORD}}
+, \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a6411d9d6073252e4d316493506bbb979}{OPERATOR}}
+, \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143aff042e254971f0ff4e05c584ce66be2f}{PUNCTUATION}}
+, \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a70bc9bcf1ca43e6d515a2a9bf1977a77}{NUMERIC\+\_\+\+LITERAL}}
+, \newline
+\mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a36f8b2063576965c215b1e93e1b91fda}{FLOATING\+\_\+\+POINT\+\_\+\+LITERAL}}
+, \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a5d227893cb4f93a50a8a7df421c4d2af}{CHARACTER\+\_\+\+LITERAL}}
+, \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a655e632575aa38fd0f04138439932a22}{STRING\+\_\+\+LITERAL}}
+, \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a8286d08f8e16e39895e4145a8a336a04}{INVALID\+\_\+\+IDENTIFIER}}
+, \newline
+\mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a84f8ae2490f9e4bd2321fd21f4b0e807}{IDENTIFIER}}
+, \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143ade590a4b1c38a96e9bf603fa7c614d89}{PRE\+\_\+\+PROCESSOR\+\_\+\+OPERATOR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Token type enumeration for categorizing various types of tokens during lexical analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___token_classification_gabbe0f45f2a7bd60fc671dc554809dbad}{toktyp\+\_\+rval}} (const \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} type)
+\begin{DoxyCompactList}\small\item\em Returns a string representation of a token type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} \mbox{\hyperlink{group___token_classification_ga2df78d9885e8f40f5ebf827c71430fa4}{get\+\_\+toktyp}} (const char \texorpdfstring{$\ast$}{*}const value, const \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}} type)
+\begin{DoxyCompactList}\small\item\em Determines the specific token type from a given token string and its category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Token type definitions and classification utilities. 
+
+This group contains all enums and functions related to\+:
+\begin{DoxyItemize}
+\item Token categories (preprocessor, symbols, literals)
+\item Specific token types (keywords, operators, identifiers)
+\item Token type conversion and identification 
+\end{DoxyItemize}
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}\index{Token Classification@{Token Classification}!tok\_e@{tok\_e}}
+\index{tok\_e@{tok\_e}!Token Classification@{Token Classification}}
+\doxysubsubsection{\texorpdfstring{tok\_e}{tok\_e}}
+{\footnotesize\ttfamily \label{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143} 
+enum \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}}
+
+
+
+Token type enumeration for categorizing various types of tokens during lexical analysis. 
+
+This enumeration defines the different types of tokens that can be encountered during the tokenization phase of source code parsing. Each token type corresponds to a specific element or construct in the source code, such as keywords, operators, punctuation, literals, and identifiers. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYWORD@{KEYWORD}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!KEYWORD@{KEYWORD}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a129281444e94f5f509cba213d51a814d}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a129281444e94f5f509cba213d51a814d} 
+KEYWORD&Keyword token type. This type represents keywords in the source code (e.\+g., {\ttfamily int}, {\ttfamily if}, {\ttfamily while}, {\ttfamily return}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPERATOR@{OPERATOR}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!OPERATOR@{OPERATOR}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a6411d9d6073252e4d316493506bbb979}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a6411d9d6073252e4d316493506bbb979} 
+OPERATOR&Operator token type. This type represents operators such as arithmetic ({\ttfamily +}, {\ttfamily -\/}, {\ttfamily \texorpdfstring{$\ast$}{*}}, {\ttfamily /}), logical ({\ttfamily \&\&}, {\ttfamily \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}}), relational ({\ttfamily \texorpdfstring{$<$}{<}}, {\ttfamily \texorpdfstring{$>$}{>}}, {\ttfamily ==}), and others. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PUNCTUATION@{PUNCTUATION}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!PUNCTUATION@{PUNCTUATION}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143aff042e254971f0ff4e05c584ce66be2f}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143aff042e254971f0ff4e05c584ce66be2f} 
+PUNCTUATION&Punctuation token type. This type represents punctuation characters such as semicolons ({\ttfamily ;}), commas ({\ttfamily ,}), and parentheses ({\ttfamily (}, {\ttfamily )}, {\ttfamily \{}, {\ttfamily \}}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUMERIC\_LITERAL@{NUMERIC\_LITERAL}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!NUMERIC\_LITERAL@{NUMERIC\_LITERAL}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a70bc9bcf1ca43e6d515a2a9bf1977a77}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a70bc9bcf1ca43e6d515a2a9bf1977a77} 
+NUMERIC\+\_\+\+LITERAL&Numeric literal token type. This type represents integer numeric literals (e.\+g., {\ttfamily 123}, {\ttfamily 456}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOATING\_POINT\_LITERAL@{FLOATING\_POINT\_LITERAL}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!FLOATING\_POINT\_LITERAL@{FLOATING\_POINT\_LITERAL}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a36f8b2063576965c215b1e93e1b91fda}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a36f8b2063576965c215b1e93e1b91fda} 
+FLOATING\+\_\+\+POINT\+\_\+\+LITERAL&Floating point literal token type. This type represents floating-\/point numeric literals (e.\+g., {\ttfamily 3.\+14}, {\ttfamily 1.\+618}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHARACTER\_LITERAL@{CHARACTER\_LITERAL}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!CHARACTER\_LITERAL@{CHARACTER\_LITERAL}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a5d227893cb4f93a50a8a7df421c4d2af}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a5d227893cb4f93a50a8a7df421c4d2af} 
+CHARACTER\+\_\+\+LITERAL&Character literal token type. This type represents character literals (e.\+g., `\textquotesingle{}a'{\ttfamily ,}\textquotesingle{}b\textquotesingle{}{\ttfamily ,}\textquotesingle{}1\textquotesingle{}\`{}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRING\_LITERAL@{STRING\_LITERAL}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!STRING\_LITERAL@{STRING\_LITERAL}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a655e632575aa38fd0f04138439932a22}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a655e632575aa38fd0f04138439932a22} 
+STRING\+\_\+\+LITERAL&String literal token type. This type represents string literals (e.\+g., {\ttfamily "{}\+Hello, world!"{}}, {\ttfamily "{}1234"{}}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_IDENTIFIER@{INVALID\_IDENTIFIER}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!INVALID\_IDENTIFIER@{INVALID\_IDENTIFIER}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a8286d08f8e16e39895e4145a8a336a04}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a8286d08f8e16e39895e4145a8a336a04} 
+INVALID\+\_\+\+IDENTIFIER&Invalid identifier token type. This type represents tokens that are invalid identifiers (e.\+g., identifiers starting with a number or containing illegal characters). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDENTIFIER@{IDENTIFIER}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!IDENTIFIER@{IDENTIFIER}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a84f8ae2490f9e4bd2321fd21f4b0e807}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a84f8ae2490f9e4bd2321fd21f4b0e807} 
+IDENTIFIER&Identifier token type. This type represents valid identifiers (e.\+g., variable names, function names, etc.). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRE\_PROCESSOR\_OPERATOR@{PRE\_PROCESSOR\_OPERATOR}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!PRE\_PROCESSOR\_OPERATOR@{PRE\_PROCESSOR\_OPERATOR}}}\Hypertarget{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143ade590a4b1c38a96e9bf603fa7c614d89}\label{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143ade590a4b1c38a96e9bf603fa7c614d89} 
+PRE\+\_\+\+PROCESSOR\+\_\+\+OPERATOR&Preprocessor operator token type. This type represents operators related to preprocessor directives (e.\+g., {\ttfamily \#define}, {\ttfamily \#include}). \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}\index{Token Classification@{Token Classification}!tokcat\_e@{tokcat\_e}}
+\index{tokcat\_e@{tokcat\_e}!Token Classification@{Token Classification}}
+\doxysubsubsection{\texorpdfstring{tokcat\_e}{tokcat\_e}}
+{\footnotesize\ttfamily \label{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982} 
+enum \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}}}
+
+
+
+Token category enumeration for categorizing different token types in the pre-\/processing phase. 
+
+This enumeration represents the different categories of tokens that are encountered during the lexical analysis or tokenization process. The token categories include preprocessor directives, symbols, literals, and numerical literals (including floating-\/point numbers, keywords, and identifiers).
+
+\begin{DoxyNote}{Note}
+The NFKI\+\_\+\+LITERAL category includes tokens that represent numerical literals, floating-\/point literals, keywords, or identifiers. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRE\_PROC@{PRE\_PROC}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!PRE\_PROC@{PRE\_PROC}}}\Hypertarget{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982ab8bb5c07c737048df5efca7b46285c57}\label{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982ab8bb5c07c737048df5efca7b46285c57} 
+PRE\+\_\+\+PROC&Preprocessor directives ({\ttfamily \#define}, {\ttfamily \#include}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYMBOLS@{SYMBOLS}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!SYMBOLS@{SYMBOLS}}}\Hypertarget{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982aaf54c87377eae7f271a3808cd41a6d41}\label{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982aaf54c87377eae7f271a3808cd41a6d41} 
+SYMBOLS&Operators/punctuation ({\ttfamily +}, {\ttfamily ;}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LITERAL@{LITERAL}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!LITERAL@{LITERAL}}}\Hypertarget{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a01168ce90eea67d7bb43776fb0c139e5}\label{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a01168ce90eea67d7bb43776fb0c139e5} 
+LITERAL&String/character literals. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NFKI\_LITERAL@{NFKI\_LITERAL}!Token Classification@{Token Classification}}\index{Token Classification@{Token Classification}!NFKI\_LITERAL@{NFKI\_LITERAL}}}\Hypertarget{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a2787ddbffe1e8c333e9259f42accc35e}\label{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a2787ddbffe1e8c333e9259f42accc35e} 
+NFKI\+\_\+\+LITERAL&Numerical literals, keywords, or identifiers. \begin{DoxyNote}{Note}
+Includes integers, floats, and reserved words. 
+\end{DoxyNote}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___token_classification_ga2df78d9885e8f40f5ebf827c71430fa4}\index{Token Classification@{Token Classification}!get\_toktyp@{get\_toktyp}}
+\index{get\_toktyp@{get\_toktyp}!Token Classification@{Token Classification}}
+\doxysubsubsection{\texorpdfstring{get\_toktyp()}{get\_toktyp()}}
+{\footnotesize\ttfamily \label{group___token_classification_ga2df78d9885e8f40f5ebf827c71430fa4} 
+\mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} get\+\_\+toktyp (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}const}]{value}{, }\item[{const \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Determines the specific token type from a given token string and its category. 
+
+This function maps a token string and its broader token category (from {\ttfamily \doxylink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}}) to a specific token type (from {\ttfamily \doxylink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}). It internally uses helper functions to check the nature of the token based on its string value.
+
+Depending on the token category, it checks the token string against known operators, punctuation, literals, keywords, and identifiers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The token string to be classified. \\
+\hline
+{\em type} & The general category of the token, given as a {\ttfamily \doxylink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}} value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The specific token type as a value from {\ttfamily \doxylink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}. Returns {\ttfamily INVALID\+\_\+\+IDENTIFIER} if no match is found. 
+\end{DoxyReturn}
+\Hypertarget{group___token_classification_gabbe0f45f2a7bd60fc671dc554809dbad}\index{Token Classification@{Token Classification}!toktyp\_rval@{toktyp\_rval}}
+\index{toktyp\_rval@{toktyp\_rval}!Token Classification@{Token Classification}}
+\doxysubsubsection{\texorpdfstring{toktyp\_rval()}{toktyp\_rval()}}
+{\footnotesize\ttfamily \label{group___token_classification_gabbe0f45f2a7bd60fc671dc554809dbad} 
+const char \texorpdfstring{$\ast$}{*} toktyp\+\_\+rval (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Returns a string representation of a token type. 
+
+This function takes a token type from the {\ttfamily \doxylink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} enumeration and returns its corresponding human-\/readable string name. It\textquotesingle{}s primarily used for debugging, logging, or displaying token types in a user-\/friendly format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The token type (of enum {\ttfamily \doxylink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}) whose string representation is to be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A constant string representing the name of the token type. If the token type is unrecognized, returns "{}\+Invalid Identifier"{}. 
+\end{DoxyReturn}

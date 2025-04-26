@@ -1,0 +1,36 @@
+\doxysection{lexer\+\_\+io.\+h}
+\hypertarget{lexer__io_8h_source}{}\label{lexer__io_8h_source}\index{/Users/devanshseth/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/CompilerDesign/Lexical Analyzer/headers/lexer\_io.h@{/Users/devanshseth/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/CompilerDesign/Lexical Analyzer/headers/lexer\_io.h}}
+\mbox{\hyperlink{lexer__io_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LEXER\_IO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LEXER\_IO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structfchnk__t_a499392f1685485195de8f938f93647d6}{buff}};}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structfchnk__t_a626a9a65a710ed0c23420aeee76aa2c8}{chksz}};}
+\DoxyCodeLine{00055\ \}\ \mbox{\hyperlink{structfchnk__t}{fchnk\_t}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00068\ \mbox{\hyperlink{structfchnk__t}{fchnk\_t}}\ *\mbox{\hyperlink{group___lexer_i_o_ga20d717ce74998d3bf17a4bb2ac6bfad5}{fchnk\_ctor}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00086\ \mbox{\hyperlink{structfchnk__t}{fchnk\_t}}\ *\mbox{\hyperlink{group___lexer_i_o_ga77d91728b5765cc037b5137d959211e6}{fchnk\_ptor}}(\textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ buff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ chksz);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group___lexer_i_o_ga909d6a61165fed954f02251706989c4b}{fwrite\_fchnk}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fname,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfchnk__t}{fchnk\_t}}\ *chnk);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00123\ \mbox{\hyperlink{structfchnk__t}{fchnk\_t}}\ *\mbox{\hyperlink{group___lexer_i_o_ga28abaf0ddb44cb5fb0890bba1daff00c}{get\_fchnk}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fname);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \textcolor{comment}{//\ End\ of\ LexerIO\ group}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

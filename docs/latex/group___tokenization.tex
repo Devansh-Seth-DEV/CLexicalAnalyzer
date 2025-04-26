@@ -1,0 +1,121 @@
+\doxysubsection{Tokenization}
+\hypertarget{group___tokenization}{}\label{group___tokenization}\index{Tokenization@{Tokenization}}
+
+
+Source code to token conversion.  
+
+
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{group___tokenization_gae0c0a7a1181c1edc46cd937176f4c37c}{tokcnt}} (const char \texorpdfstring{$\ast$}{*}const line)
+\begin{DoxyCompactList}\small\item\em Counts the number of tokens in a given string (or file content). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___tokenization_ga743b8789dd6718aae4459fbd0b5cba95}{toknz\+\_\+segtoset}} (\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const set, const size\+\_\+t token\+\_\+index, const char \texorpdfstring{$\ast$}{*}const line, const size\+\_\+t start, const size\+\_\+t end, const size\+\_\+t line\+\_\+no, const \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}} category, const size\+\_\+t column)
+\begin{DoxyCompactList}\small\item\em Tokenizes a segment of a line and stores the resulting token in the token set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___tokenization_ga221db00549e4cd6c05c5e809b13bce26}{toknz}} (const char \texorpdfstring{$\ast$}{*}const line)
+\begin{DoxyCompactList}\small\item\em Tokenizes a line (or multiple lines of code) into a set of tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Source code to token conversion. 
+
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___tokenization_gae0c0a7a1181c1edc46cd937176f4c37c}\index{Tokenization@{Tokenization}!tokcnt@{tokcnt}}
+\index{tokcnt@{tokcnt}!Tokenization@{Tokenization}}
+\doxysubsubsubsection{\texorpdfstring{tokcnt()}{tokcnt()}}
+{\footnotesize\ttfamily \label{group___tokenization_gae0c0a7a1181c1edc46cd937176f4c37c} 
+size\+\_\+t tokcnt (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}const}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Counts the number of tokens in a given string (or file content). 
+
+This function counts the number of tokens in a provided line of text (or a whole block of code, if the entire file content is passed). It categorizes tokens into string literals, character literals, operators, punctuations, and identifiers/keywords/literals. The function processes the string character by character and considers escape sequences where applicable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A constant pointer to a string containing the code to be analyzed. This string can represent a single line of code or the entire content of a file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total number of tokens found in the given string.
+\end{DoxyReturn}
+Handles\+:
+\begin{DoxyItemize}
+\item String/character literals (with escape sequences)
+\item Operators and punctuation
+\item Identifiers/keywords
+\item Preprocessor directives 
+\end{DoxyItemize}\Hypertarget{group___tokenization_ga221db00549e4cd6c05c5e809b13bce26}\index{Tokenization@{Tokenization}!toknz@{toknz}}
+\index{toknz@{toknz}!Tokenization@{Tokenization}}
+\doxysubsubsubsection{\texorpdfstring{toknz()}{toknz()}}
+{\footnotesize\ttfamily \label{group___tokenization_ga221db00549e4cd6c05c5e809b13bce26} 
+\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*} toknz (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}const}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Tokenizes a line (or multiple lines of code) into a set of tokens. 
+
+This function processes the given string (or entire code block) and divides it into individual tokens. It supports string literals, character literals, operators, punctuations, separators, preprocessor directives, identifiers, and keywords. The tokens are stored in the provided token set.
+
+The function uses {\ttfamily toknz\+\_\+segtoset} to tokenize individual segments of the line and store them in the token set. It ensures that each token is associated with its type, position (line number, column), and appropriate category (e.\+g., literal, operator, identifier).
+
+If the number of tokens in the resulting set does not match the expected token count, the function reports an error and returns {\ttfamily NULL}. It processes both single lines and whole files, depending on the input provided.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A constant pointer to the string (or code block) to be tokenized. This can represent a single line or the entire content of a file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the token set ({\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}}) containing all identified tokens. Returns {\ttfamily NULL} if an error occurs during tokenization (e.\+g., mismatch in expected token count). 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em NULL} & on tokenization error\\
+\hline
+\end{DoxyRetVals}
+Processes\+:
+\begin{DoxyItemize}
+\item Multi-\/line inputs
+\item All token types
+\item Maintains position information 
+\end{DoxyItemize}\Hypertarget{group___tokenization_ga743b8789dd6718aae4459fbd0b5cba95}\index{Tokenization@{Tokenization}!toknz\_segtoset@{toknz\_segtoset}}
+\index{toknz\_segtoset@{toknz\_segtoset}!Tokenization@{Tokenization}}
+\doxysubsubsubsection{\texorpdfstring{toknz\_segtoset()}{toknz\_segtoset()}}
+{\footnotesize\ttfamily \label{group___tokenization_ga743b8789dd6718aae4459fbd0b5cba95} 
+void toknz\+\_\+segtoset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{set}{, }\item[{const size\+\_\+t}]{token\+\_\+index}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{line}{, }\item[{const size\+\_\+t}]{start}{, }\item[{const size\+\_\+t}]{end}{, }\item[{const size\+\_\+t}]{line\+\_\+no}{, }\item[{const \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}}}]{category}{, }\item[{const size\+\_\+t}]{column}{}\end{DoxyParamCaption})}
+
+
+
+Tokenizes a segment of a line and stores the resulting token in the token set. 
+
+This function extracts a substring from the given line, determines its token type based on the specified token category, and stores the token in the provided token set at the specified index. It handles memory allocation for the substring, creates a token using the {\ttfamily tok\+\_\+ptor} constructor, and stores the token in the {\ttfamily set-\/\texorpdfstring{$>$}{>}toks} array. If memory allocation fails, it sets the token to {\ttfamily NULL}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A pointer to the {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object in which the token will be stored. \\
+\hline
+{\em token\+\_\+index} & The index in the token set where the token will be stored. \\
+\hline
+{\em line} & A constant pointer to the string containing the source line of code. \\
+\hline
+{\em start} & The starting index of the token within the line. \\
+\hline
+{\em end} & The ending index of the token within the line. \\
+\hline
+{\em line\+\_\+no} & The line number where the token appears in the source code. \\
+\hline
+{\em category} & The category of the token, from {\ttfamily \doxylink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\+\_\+e}} (e.\+g., literals, symbols). \\
+\hline
+{\em column} & The starting column number of the token within the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Allocates memory for token value 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Sets token to NULL on allocation failure 
+\end{DoxyWarning}

@@ -1,0 +1,44 @@
+\doxysection{Lexical Analyzer}
+\hypertarget{group___lexer}{}\label{group___lexer}\index{Lexical Analyzer@{Lexical Analyzer}}
+
+
+Complete token handling system for source code analysis.  
+
+
+\doxysubsubsection*{Topics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___lexer_i_o}{File I/O}}
+\begin{DoxyCompactList}\small\item\em File chunk handling utilities for lexical analysis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___tokenization}{Tokenization}}
+\begin{DoxyCompactList}\small\item\em Source code to token conversion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___token_validation}{Token Validation}}
+\begin{DoxyCompactList}\small\item\em Token validation functions for lexical analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{lexer__tokenize_8h}{lexer\+\_\+tokenize.\+h}}
+\begin{DoxyCompactList}\small\item\em Tokenization core implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Complete token handling system for source code analysis. 
+
+This header provides the complete infrastructure for\+:
+\begin{DoxyItemize}
+\item Token type classification (\#\+Token\+Classification)
+\item Individual token representation (\#\+Token\+Structure)
+\item Token collection management (\#\+Token\+Set)
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The groups form a processing pipeline\+:
+\begin{DoxyEnumerate}
+\item Classification categorizes lexemes
+\item Structures store the results
+\item Collections manage token sequences 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+\input{group___lexer_i_o}
+\input{group___tokenization}
+\input{group___token_validation}

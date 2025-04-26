@@ -1,0 +1,161 @@
+\doxysection{Token Structure}
+\hypertarget{group___token_structure}{}\label{group___token_structure}\index{Token Structure@{Token Structure}}
+
+
+Token instance representation and operations.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtok__t}{tok\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Container for token data and metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___token_structure_ga74c2a75704f60d5fe1ccf2f25ba94e09}\label{group___token_structure_ga74c2a75704f60d5fe1ccf2f25ba94e09} 
+typedef struct tok\+\_\+t {\bfseries tok\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___token_structure_gaf159548f6e36bad96a7c57c2b80dd549}{tok\+\_\+ctor}} ()
+\begin{DoxyCompactList}\small\item\em Allocates and returns a new token object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___token_structure_gaab43de95750424bf508f5ae3a37ee2ee}{tok\+\_\+nctor}} (const size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Allocates and returns an array of token objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___token_structure_ga4e502c10281eec3f7c4263950580a8c0}{tok\+\_\+ptor}} (char \texorpdfstring{$\ast$}{*}value, const \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} type, const size\+\_\+t line, const size\+\_\+t col)
+\begin{DoxyCompactList}\small\item\em Creates and initializes a token with given values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___token_structure_ga10d409ba19133ae26a49537d54106904}{tok\+\_\+dtor}} (\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}tok)
+\begin{DoxyCompactList}\small\item\em Frees the memory associated with a token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___token_structure_ga33b310ff26459f8f72adf144c78ec0e8}{printf\+\_\+tok}} (const \mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}const tok)
+\begin{DoxyCompactList}\small\item\em Prints the contents of a token to the standard output. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___token_structure_gac8707188a65a9368fddafe4b7fc3a1e0}{fwrite\+\_\+tok}} (FILE \texorpdfstring{$\ast$}{*}fp, const \mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}const tok)
+\begin{DoxyCompactList}\small\item\em Writes the contents of a token to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Token instance representation and operations. 
+
+This group contains the token container structure ({\ttfamily \doxylink{structtok__t}{tok\+\_\+t}}) and all functions for creating, managing, and destroying individual tokens. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___token_structure_gac8707188a65a9368fddafe4b7fc3a1e0}\index{Token Structure@{Token Structure}!fwrite\_tok@{fwrite\_tok}}
+\index{fwrite\_tok@{fwrite\_tok}!Token Structure@{Token Structure}}
+\doxysubsubsection{\texorpdfstring{fwrite\_tok()}{fwrite\_tok()}}
+{\footnotesize\ttfamily \label{group___token_structure_gac8707188a65a9368fddafe4b7fc3a1e0} 
+bool fwrite\+\_\+tok (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{fp}{, }\item[{const \mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{tok}{}\end{DoxyParamCaption})}
+
+
+
+Writes the contents of a token to a file. 
+
+This function prints the token\textquotesingle{}s value, type, line number, and column number to the specified file. It performs error checking on each write operation and reports issues using {\ttfamily perror}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & A valid file pointer to which the token will be written. Must not be {\ttfamily NULL}. \\
+\hline
+{\em tok} & A constant pointer to the {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} object to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if all write operations succeed, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group___token_structure_ga33b310ff26459f8f72adf144c78ec0e8}\index{Token Structure@{Token Structure}!printf\_tok@{printf\_tok}}
+\index{printf\_tok@{printf\_tok}!Token Structure@{Token Structure}}
+\doxysubsubsection{\texorpdfstring{printf\_tok()}{printf\_tok()}}
+{\footnotesize\ttfamily \label{group___token_structure_ga33b310ff26459f8f72adf144c78ec0e8} 
+void printf\+\_\+tok (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{tok}{}\end{DoxyParamCaption})}
+
+
+
+Prints the contents of a token to the standard output. 
+
+This utility function displays the token\textquotesingle{}s value, type (as a string), line number, and column number in a human-\/readable format using {\ttfamily printf}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tok} & A constant pointer to the {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} object to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___token_structure_gaf159548f6e36bad96a7c57c2b80dd549}\index{Token Structure@{Token Structure}!tok\_ctor@{tok\_ctor}}
+\index{tok\_ctor@{tok\_ctor}!Token Structure@{Token Structure}}
+\doxysubsubsection{\texorpdfstring{tok\_ctor()}{tok\_ctor()}}
+{\footnotesize\ttfamily \label{group___token_structure_gaf159548f6e36bad96a7c57c2b80dd549} 
+\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*} tok\+\_\+ctor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Allocates and returns a new token object. 
+
+This is the default constructor for a {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} token. It dynamically allocates memory for a new token instance and returns a pointer to it.
+
+\begin{DoxyReturn}{Returns}
+A pointer to a newly allocated {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} object. The memory should be freed by the caller when no longer needed. 
+\end{DoxyReturn}
+\Hypertarget{group___token_structure_ga10d409ba19133ae26a49537d54106904}\index{Token Structure@{Token Structure}!tok\_dtor@{tok\_dtor}}
+\index{tok\_dtor@{tok\_dtor}!Token Structure@{Token Structure}}
+\doxysubsubsection{\texorpdfstring{tok\_dtor()}{tok\_dtor()}}
+{\footnotesize\ttfamily \label{group___token_structure_ga10d409ba19133ae26a49537d54106904} 
+void tok\+\_\+dtor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{tok}{}\end{DoxyParamCaption})}
+
+
+
+Frees the memory associated with a token. 
+
+This destructor deallocates the memory used by a {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} object, including its dynamically allocated value string. After calling this function, the token pointer should no longer be used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tok} & A pointer to the {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} object to be destroyed. If {\ttfamily tok} or {\ttfamily tok-\/\texorpdfstring{$>$}{>}val} is {\ttfamily NULL}, the function does nothing. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___token_structure_gaab43de95750424bf508f5ae3a37ee2ee}\index{Token Structure@{Token Structure}!tok\_nctor@{tok\_nctor}}
+\index{tok\_nctor@{tok\_nctor}!Token Structure@{Token Structure}}
+\doxysubsubsection{\texorpdfstring{tok\_nctor()}{tok\_nctor()}}
+{\footnotesize\ttfamily \label{group___token_structure_gaab43de95750424bf508f5ae3a37ee2ee} 
+\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} tok\+\_\+nctor (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Allocates and returns an array of token objects. 
+
+This function acts as a constructor for multiple {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} tokens. It allocates memory for an array of {\ttfamily n} tokens and returns a pointer to the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of tokens to allocate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to array. of {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} tokens. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The memory should be freed by the caller when no longer needed. 
+\end{DoxyNote}
+\Hypertarget{group___token_structure_ga4e502c10281eec3f7c4263950580a8c0}\index{Token Structure@{Token Structure}!tok\_ptor@{tok\_ptor}}
+\index{tok\_ptor@{tok\_ptor}!Token Structure@{Token Structure}}
+\doxysubsubsection{\texorpdfstring{tok\_ptor()}{tok\_ptor()}}
+{\footnotesize\ttfamily \label{group___token_structure_ga4e502c10281eec3f7c4263950580a8c0} 
+\mbox{\hyperlink{structtok__t}{tok\+\_\+t}} \texorpdfstring{$\ast$}{*} tok\+\_\+ptor (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{value}{, }\item[{const \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}}]{type}{, }\item[{const size\+\_\+t}]{line}{, }\item[{const size\+\_\+t}]{col}{}\end{DoxyParamCaption})}
+
+
+
+Creates and initializes a token with given values. 
+
+This parameterized constructor allocates a new {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} object and initializes it with the provided token value, type, line number, and column number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The string value of the token (lexeme). \\
+\hline
+{\em type} & The specific token type from {\ttfamily \doxylink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}. \\
+\hline
+{\em line} & The line number where the token appears in the source code. \\
+\hline
+{\em col} & The column number where the token starts in the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created and initialized {\ttfamily \doxylink{structtok__t}{tok\+\_\+t}} object. The caller is responsible for freeing the memory. 
+\end{DoxyReturn}

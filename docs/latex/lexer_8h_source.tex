@@ -1,0 +1,119 @@
+\doxysection{lexer.\+h}
+\hypertarget{lexer_8h_source}{}\label{lexer_8h_source}\index{/Users/devanshseth/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/CompilerDesign/Lexical Analyzer/headers/lexer.h@{/Users/devanshseth/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/CompilerDesign/Lexical Analyzer/headers/lexer.h}}
+\mbox{\hyperlink{lexer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LEXER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LEXER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lexer__validation_8h}{lexer\_validation.h}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\_e}}\{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982ab8bb5c07c737048df5efca7b46285c57}{PRE\_PROC}},\ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982aaf54c87377eae7f271a3808cd41a6d41}{SYMBOLS}},\ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a01168ce90eea67d7bb43776fb0c139e5}{LITERAL}},\ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga15a4f5fa9017a6c10fa9e79e2b4cd982a2787ddbffe1e8c333e9259f42accc35e}{NFKI\_LITERAL}}}
+\DoxyCodeLine{00058\ \}\ \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\_e}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\_e}}\{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a129281444e94f5f509cba213d51a814d}{KEYWORD}},}
+\DoxyCodeLine{00079\ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a6411d9d6073252e4d316493506bbb979}{OPERATOR}},}
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143aff042e254971f0ff4e05c584ce66be2f}{PUNCTUATION}},}
+\DoxyCodeLine{00095\ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a70bc9bcf1ca43e6d515a2a9bf1977a77}{NUMERIC\_LITERAL}},}
+\DoxyCodeLine{00102\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a36f8b2063576965c215b1e93e1b91fda}{FLOATING\_POINT\_LITERAL}},}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a5d227893cb4f93a50a8a7df421c4d2af}{CHARACTER\_LITERAL}},}
+\DoxyCodeLine{00116\ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a655e632575aa38fd0f04138439932a22}{STRING\_LITERAL}},}
+\DoxyCodeLine{00123\ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a8286d08f8e16e39895e4145a8a336a04}{INVALID\_IDENTIFIER}},}
+\DoxyCodeLine{00131\ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143a84f8ae2490f9e4bd2321fd21f4b0e807}{IDENTIFIER}},}
+\DoxyCodeLine{00138\ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{group___token_classification_gga5ac90c6e15241ff6e8ccfc54b813b143ade590a4b1c38a96e9bf603fa7c614d89}{PRE\_PROCESSOR\_OPERATOR}}}
+\DoxyCodeLine{00145\ \}\ \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\_e}};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{group___token_classification_gabbe0f45f2a7bd60fc671dc554809dbad}{toktyp\_rval}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\_e}}\ type);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00180\ \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\_e}}\ \mbox{\hyperlink{group___token_classification_ga2df78d9885e8f40f5ebf827c71430fa4}{get\_toktyp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ value,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{group___token_classification_ga15a4f5fa9017a6c10fa9e79e2b4cd982}{tokcat\_e}}\ type);}
+\DoxyCodeLine{00181\ \ \textcolor{comment}{//\ End\ of\ TokenClassification\ group}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtok__t}{tok\_t}}\{}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structtok__t_a51fbb4fe22ee898a86d576abba978299}{val}};\ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\_e}}\ \mbox{\hyperlink{structtok__t_acb02387773b790ea85cf335fc1a75711}{typ}};\ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtok__t_aec1bfd7bff9ddd51f9d97e459166ae43}{ln}};\ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtok__t_ab5f9ce325d8da04110184ccbe981b9b0}{col}};\ }
+\DoxyCodeLine{00213\ \}\ \mbox{\hyperlink{structtok__t}{tok\_t}};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00225\ \mbox{\hyperlink{structtok__t}{tok\_t}}\ *\mbox{\hyperlink{group___token_structure_gaf159548f6e36bad96a7c57c2b80dd549}{tok\_ctor}}();}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00239\ \mbox{\hyperlink{structtok__t}{tok\_t}}\ **\mbox{\hyperlink{group___token_structure_gaab43de95750424bf508f5ae3a37ee2ee}{tok\_nctor}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00256\ \mbox{\hyperlink{structtok__t}{tok\_t}}\ *\mbox{\hyperlink{group___token_structure_ga4e502c10281eec3f7c4263950580a8c0}{tok\_ptor}}(\textcolor{keywordtype}{char}\ *value,}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\_e}}\ type,}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line,}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ col);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00272\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___token_structure_ga10d409ba19133ae26a49537d54106904}{tok\_dtor}}(\mbox{\hyperlink{structtok__t}{tok\_t}}\ *tok);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00283\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___token_structure_ga33b310ff26459f8f72adf144c78ec0e8}{printf\_tok}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtok__t}{tok\_t}}\ *\textcolor{keyword}{const}\ tok);}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00297\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group___token_structure_gac8707188a65a9368fddafe4b7fc3a1e0}{fwrite\_tok}}(FILE\ *fp,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtok__t}{tok\_t}}\ *\textcolor{keyword}{const}\ tok);}
+\DoxyCodeLine{00298\ \ \textcolor{comment}{//\ End\ of\ TokenStructure\ group}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00325\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtokset__t}{tokset\_t}}\ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \mbox{\hyperlink{structtok__t}{tok\_t}}\ **\mbox{\hyperlink{structtokset__t_ae405090da6d3757d031bcdc1f39fb954}{toks}};\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structtokset__t_a413afd7e50dcc232334d7aab5c8a06b1}{toksz}};\ }
+\DoxyCodeLine{00328\ \}\ \mbox{\hyperlink{structtokset__t}{tokset\_t}};}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00341\ \mbox{\hyperlink{structtokset__t}{tokset\_t}}\ *\mbox{\hyperlink{group___token_set_gafbabbe32abbdccd52cbf8384f11962c8}{tokset\_ctor}}();}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00356\ \mbox{\hyperlink{structtokset__t}{tokset\_t}}\ *\mbox{\hyperlink{group___token_set_ga696c5440fbaf2c1b6e665b814987cc32}{tokset\_ptor}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ toksz);}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00369\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___token_set_ga0b66bf94d1bdc1f4931f372e6a5ec195}{tokset\_dtor}}(\mbox{\hyperlink{structtokset__t}{tokset\_t}}\ *set);}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00383\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{group___token_set_gaf7e6efdcc49f07780338dbd1ce80a72f}{cnt\_toktyp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtokset__t}{tokset\_t}}\ *\textcolor{keyword}{const}\ set,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\_e}}\ type);}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00395\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___token_set_ga3bd72746422fa107527cd7772829d419}{printf\_tokset}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtokset__t}{tokset\_t}}\ *\textcolor{keyword}{const}\ set);}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00411\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group___token_set_gaf02d5d770820b56774b533c21e30ca2f}{fwrite\_tokset}}(FILE\ *fp,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtokset__t}{tokset\_t}}\ *\textcolor{keyword}{const}\ set);}
+\DoxyCodeLine{00412\ \ \textcolor{comment}{//\ End\ of\ TokenSet\ group}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \ \textcolor{comment}{//\ End\ of\ Lexer\ group}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

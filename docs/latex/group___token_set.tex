@@ -1,0 +1,159 @@
+\doxysection{Token Set}
+\hypertarget{group___token_set}{}\label{group___token_set}\index{Token Set@{Token Set}}
+
+
+Collection of tokens and operations.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Container for multiple tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___token_set_gaaa55988e7049ab98f9ab606548abeabe}\label{group___token_set_gaaa55988e7049ab98f9ab606548abeabe} 
+typedef struct tokset\+\_\+t {\bfseries tokset\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___token_set_gafbabbe32abbdccd52cbf8384f11962c8}{tokset\+\_\+ctor}} ()
+\begin{DoxyCompactList}\small\item\em Allocates and returns a new token set object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___token_set_ga696c5440fbaf2c1b6e665b814987cc32}{tokset\+\_\+ptor}} (const size\+\_\+t toksz)
+\begin{DoxyCompactList}\small\item\em Creates and initializes a token set with a specified number of tokens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___token_set_ga0b66bf94d1bdc1f4931f372e6a5ec195}{tokset\+\_\+dtor}} (\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}set)
+\begin{DoxyCompactList}\small\item\em Frees the memory associated with a token set. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group___token_set_gaf7e6efdcc49f07780338dbd1ce80a72f}{cnt\+\_\+toktyp}} (const \mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const set, const \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}} type)
+\begin{DoxyCompactList}\small\item\em Counts the number of tokens of a specific type in a token set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___token_set_ga3bd72746422fa107527cd7772829d419}{printf\+\_\+tokset}} (const \mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const set)
+\begin{DoxyCompactList}\small\item\em Prints the contents of a token set to the standard output. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___token_set_gaf02d5d770820b56774b533c21e30ca2f}{fwrite\+\_\+tokset}} (FILE \texorpdfstring{$\ast$}{*}fp, const \mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const set)
+\begin{DoxyCompactList}\small\item\em Writes the contents of a token set to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collection of tokens and operations. 
+
+This group contains the token set structure (\doxylink{structtokset__t}{tokset\+\_\+t}) and all functions for managing collections of tokens, including\+:
+\begin{DoxyItemize}
+\item Set creation and destruction
+\item Token counting and analysis
+\item Set visualization and I/O 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___token_set_gaf7e6efdcc49f07780338dbd1ce80a72f}\index{Token Set@{Token Set}!cnt\_toktyp@{cnt\_toktyp}}
+\index{cnt\_toktyp@{cnt\_toktyp}!Token Set@{Token Set}}
+\doxysubsubsection{\texorpdfstring{cnt\_toktyp()}{cnt\_toktyp()}}
+{\footnotesize\ttfamily \label{group___token_set_gaf7e6efdcc49f07780338dbd1ce80a72f} 
+size\+\_\+t cnt\+\_\+toktyp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{set}{, }\item[{const \mbox{\hyperlink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Counts the number of tokens of a specific type in a token set. 
+
+This function iterates through the token set and counts how many tokens match the specified type. It compares each token\textquotesingle{}s type with the provided {\ttfamily type} argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A constant pointer to the {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object containing the tokens to be checked. \\
+\hline
+{\em type} & The specific token type (from {\ttfamily \doxylink{group___token_classification_ga5ac90c6e15241ff6e8ccfc54b813b143}{tok\+\_\+e}}) to count in the token set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of tokens of the specified type found in the token set. 
+\end{DoxyReturn}
+\Hypertarget{group___token_set_gaf02d5d770820b56774b533c21e30ca2f}\index{Token Set@{Token Set}!fwrite\_tokset@{fwrite\_tokset}}
+\index{fwrite\_tokset@{fwrite\_tokset}!Token Set@{Token Set}}
+\doxysubsubsection{\texorpdfstring{fwrite\_tokset()}{fwrite\_tokset()}}
+{\footnotesize\ttfamily \label{group___token_set_gaf02d5d770820b56774b533c21e30ca2f} 
+bool fwrite\+\_\+tokset (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{fp}{, }\item[{const \mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{set}{}\end{DoxyParamCaption})}
+
+
+
+Writes the contents of a token set to a file. 
+
+This function writes a summary of the token set to the specified file, including the total number of tokens and a breakdown of the counts for each token type. It then writes each individual token’s details to the file. If any write operation fails, it reports the error and returns {\ttfamily false}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & A valid file pointer where the token set will be written. Must not be {\ttfamily NULL}. \\
+\hline
+{\em set} & A constant pointer to the {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object containing the tokens to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if all write operations succeed, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group___token_set_ga3bd72746422fa107527cd7772829d419}\index{Token Set@{Token Set}!printf\_tokset@{printf\_tokset}}
+\index{printf\_tokset@{printf\_tokset}!Token Set@{Token Set}}
+\doxysubsubsection{\texorpdfstring{printf\_tokset()}{printf\_tokset()}}
+{\footnotesize\ttfamily \label{group___token_set_ga3bd72746422fa107527cd7772829d419} 
+void printf\+\_\+tokset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{set}{}\end{DoxyParamCaption})}
+
+
+
+Prints the contents of a token set to the standard output. 
+
+This function iterates through the token set and prints each token\textquotesingle{}s value, type, line, and column information using the {\ttfamily printf\+\_\+tok} function. It formats the output such that each token is printed on a new line, except for the last token.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A constant pointer to the {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object containing the tokens to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___token_set_gafbabbe32abbdccd52cbf8384f11962c8}\index{Token Set@{Token Set}!tokset\_ctor@{tokset\_ctor}}
+\index{tokset\_ctor@{tokset\_ctor}!Token Set@{Token Set}}
+\doxysubsubsection{\texorpdfstring{tokset\_ctor()}{tokset\_ctor()}}
+{\footnotesize\ttfamily \label{group___token_set_gafbabbe32abbdccd52cbf8384f11962c8} 
+\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*} tokset\+\_\+ctor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Allocates and returns a new token set object. 
+
+This constructor allocates memory for a new {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object, which will hold a collection of tokens. However, the token array itself ({\ttfamily toks}) is not yet initialized and will need further allocation.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the newly allocated {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object. The caller is responsible for freeing the memory when done. 
+\end{DoxyReturn}
+\Hypertarget{group___token_set_ga0b66bf94d1bdc1f4931f372e6a5ec195}\index{Token Set@{Token Set}!tokset\_dtor@{tokset\_dtor}}
+\index{tokset\_dtor@{tokset\_dtor}!Token Set@{Token Set}}
+\doxysubsubsection{\texorpdfstring{tokset\_dtor()}{tokset\_dtor()}}
+{\footnotesize\ttfamily \label{group___token_set_ga0b66bf94d1bdc1f4931f372e6a5ec195} 
+void tokset\+\_\+dtor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{set}{}\end{DoxyParamCaption})}
+
+
+
+Frees the memory associated with a token set. 
+
+This destructor deallocates the memory used by a {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object, including freeing each individual token in the token set (using {\ttfamily tok\+\_\+dtor}) and the token array itself. After calling this function, the token set pointer should no longer be used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A pointer to the {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object to be destroyed. If {\ttfamily set} is {\ttfamily NULL}, the function does nothing. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___token_set_ga696c5440fbaf2c1b6e665b814987cc32}\index{Token Set@{Token Set}!tokset\_ptor@{tokset\_ptor}}
+\index{tokset\_ptor@{tokset\_ptor}!Token Set@{Token Set}}
+\doxysubsubsection{\texorpdfstring{tokset\_ptor()}{tokset\_ptor()}}
+{\footnotesize\ttfamily \label{group___token_set_ga696c5440fbaf2c1b6e665b814987cc32} 
+\mbox{\hyperlink{structtokset__t}{tokset\+\_\+t}} \texorpdfstring{$\ast$}{*} tokset\+\_\+ptor (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{toksz}{}\end{DoxyParamCaption})}
+
+
+
+Creates and initializes a token set with a specified number of tokens. 
+
+This parameterized constructor allocates memory for a {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object and initializes the {\ttfamily toks} array to hold a specified number of tokens. It also sets the size of the token set ({\ttfamily toksz}). If memory allocation fails at any point, it reports the error and returns {\ttfamily NULL}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em toksz} & The number of tokens that the token set should be able to hold.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created and initialized {\ttfamily \doxylink{structtokset__t}{tokset\+\_\+t}} object. Returns {\ttfamily NULL} if memory allocation fails. 
+\end{DoxyReturn}
