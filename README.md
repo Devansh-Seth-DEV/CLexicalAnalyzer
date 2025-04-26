@@ -214,4 +214,19 @@ Manages:
 - **`bool fwrite_tokset(FILE *fp, const tokset_t *const set)`**
   <br>Writes the contents of a token set to a file.
 
+---
 
+# Tokenization Core Implementation
+
+The `lexer_tokenize.h` header file implements core functions for the tokenization process in a lexer. It is responsible for converting source code into token streams, counting tokens, and segmenting the code into lexical units. This header file provides the primary functions for handling the tokenization of source code, as well as utilities for managing token sets.
+
+## Functions
+
+- **`size_t tokcnt(const char *const line)`**
+  <br>Counts the number of tokens in a given string (or file content).
+
+- **`void toknz_segtoset(tokset_t *const set, const size_t token_index, const char *const line, const size_t start, const size_t end, const size_t line_no, const tokcat_e category, const size_t column)`**
+  <br>Tokenizes a segment of a line and stores the resulting token in the token set.
+
+- **`tokset_t *toknz(const char *const line)`**
+  <br>Tokenizes a line (or multiple lines of code) into a set of tokens.
