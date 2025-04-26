@@ -16,6 +16,34 @@ The analyzer also generates a detailed **log file** for every analyzed source fi
 The project is modular and well-documented using **Doxygen** for easy understanding and maintainability.
 You can find the full HTML documentation [here](docs/html/index.html)
 
+---
+
+## Build and Compile
+
+### `compile.sh` - Automating the Build Process
+
+To streamline the build process, the project includes a `compile.sh` script. This script automates the compilation of source code files and generates an executable for the Lexical Analyzer. It compiles all the `.c` files in the `src/` directory and places the binary output in the `bin/` directory.
+
+### Usage
+
+To use the compile script:
+
+1. Open a terminal.
+2. Navigate to the project directory.
+3. Run the following command:
+
+```bash
+./compile.sh
+```
+
+### Troubleshooting 
+
+- Ensure that you have gcc installed on your system.
+
+- If you encounter permission errors, you may need to make the compile.sh script executable with the following command:
+```bash
+chmod +x compile.sh
+```
 
 ---
 
