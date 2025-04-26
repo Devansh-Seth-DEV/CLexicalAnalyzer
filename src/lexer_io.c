@@ -1,5 +1,6 @@
 #include "../headers/lexer_io.h"
 
+
 fchnk_t *fchnk_ctor() {
     return malloc(sizeof(fchnk_t));
 }
@@ -10,6 +11,13 @@ fchnk_t *fchnk_ptor(char *const buff, const size_t chksz) {
     chnk->chksz = chksz;
     
     return chnk;
+}
+
+void fchnk_dtor(fchnk_t *chnk) {
+    free(chnk->buff);
+    chnk->buff = NULL;
+    free(chnk);
+    chnk = NULL;
 }
 
 bool fwrite_fchnk(const char *fname, const fchnk_t *chnk) {

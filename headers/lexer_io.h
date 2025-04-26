@@ -67,6 +67,19 @@ typedef struct {
  */
 fchnk_t *fchnk_ctor();
 
+/**
+ * @brief Destructor for the file chunk object.
+ *
+ * This function frees the memory allocated for the `buff` buffer and the `fchnk_t` structure itself.
+ * It is important to call this function when the file chunk object is no longer needed to avoid
+ * memory leaks.
+ *
+ * @param chnk Pointer to the `fchnk_t` structure to be destroyed.
+ *
+ * @note After calling this function, the pointer `chnk` should not be used as it will be freed.
+ */
+void fchnk_dtor(fchnk_t *chnk);
+
 
 /**
  * @brief Initializes and returns a file chunk object with provided buffer and size.

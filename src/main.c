@@ -37,10 +37,7 @@ int main(int argc, char *argv[]) {
     if (written < 0) {
         printf("Error creating file path");
         tokset_dtor(set);
-        
-        free(content->buff);
-        code = NULL;
-        free(content);
+        fchnk_dtor(content);
         return 1;
     }
     
@@ -56,12 +53,7 @@ int main(int argc, char *argv[]) {
     }
     
     fclose(fp);
-    
     tokset_dtor(set);
-    
-    free(content->buff);
-    code = NULL;
-    free(content);
-    
+    fchnk_dtor(content);
     return 0;
 }

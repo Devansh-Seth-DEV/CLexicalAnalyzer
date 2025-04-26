@@ -20,7 +20,7 @@ mkdir -p "${BIN_DIR}"
 # Compile all source files and link them together
 gcc -Wall -Wextra -g \
     -I"${HEADERS_DIR}" \
-    "${SRC_DIR}/*.c" \
+    ${SRC_DIR}/*.c \
     -o "${BIN_DIR}/${OUTPUT_NAME}"
 
 # Check if compilation was successful

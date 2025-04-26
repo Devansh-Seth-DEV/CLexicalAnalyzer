@@ -249,7 +249,7 @@ bool fwrite_tokset(FILE *fp, const tokset_t *const set) {
     
     for(size_t i=0; i<set->toksz; i++) {
         if (!fwrite_tok(fp, set->toks[i]) && is_written) is_written = false;
-        fprintf(fp, "\n");
+        if (i < set->toksz-1) fprintf(fp, "\n");
     }
     
     return is_written;
