@@ -109,8 +109,8 @@ tokset_t *toknz(const char *const line) {
     size_t token_count = 0;
     
     size_t line_no = 1;
-    size_t column = 1;
-    size_t inc = 0;
+    size_t column = 0;
+    size_t inc = 1;
     
     while (line[i] != '\0') {
         if (i>=0 && line[i] == '\n') {
@@ -119,14 +119,15 @@ tokset_t *toknz(const char *const line) {
             }
 
             token_start = i;
-            column = 1;
+            column = 0;
+            inc = 1;
             continue;
         }
         
         if (isspace(line[i])) {
             i++;
             token_start = i;
-            column++;
+            inc++;
             continue;
         }
         
@@ -200,7 +201,7 @@ tokset_t *toknz(const char *const line) {
         if (strchr("$./@`", line[i]) != NULL) {
             column += inc;
             inc = 0;
-            while(strchr("$./@\\`", line[i]) != NULL && line[i] != '\0') {
+            while(strchr("$./@`", line[i]) != NULL && line[i] != '\0') {
                 i++;
                 inc++;
             }
@@ -222,9 +223,8 @@ tokset_t *toknz(const char *const line) {
         // Creating tokens for seperators & pre-processor directive operators
         if(chk_sprtr(line[i])) {
             column += inc;
-            
+            inc = 0;
             if (line[i] == '#') {
-                inc = 0;
                 while(!isspace(line[i]) && line[i] != '\n' && line[i] != '\0') {
                     i++;
                     inc++;
@@ -238,18 +238,16 @@ tokset_t *toknz(const char *const line) {
                               line_no,
                               PRE_PROC,
                               column);
-                
-                token_start = i;
-                continue;
+
+            } else {
+                char *buff = malloc(sizeof(char)*2);
+                buff[0] = line[i];
+                buff[1] = '\0';
+                set->toks[token_count++] = tok_ptor(buff,
+                                                    PUNCTUATION,
+                                                    line_no,
+                                                    column);
             }
-            
-            char *buff = malloc(sizeof(char)*2);
-            buff[0] = line[i];
-            buff[1] = '\0';
-            set->toks[token_count++] = tok_ptor(buff,
-                                                PUNCTUATION,
-                                                line_no,
-                                                column);
                                                         
             i++;
             inc++;

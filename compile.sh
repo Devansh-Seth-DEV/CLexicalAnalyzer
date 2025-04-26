@@ -20,11 +20,7 @@ mkdir -p "${BIN_DIR}"
 # Compile all source files and link them together
 gcc -Wall -Wextra -g \
     -I"${HEADERS_DIR}" \
-    "${SRC_DIR}/lexer.c" \
-    "${SRC_DIR}/lexer_validation.c" \
-    "${SRC_DIR}/lexer_tokenize.c" \
-    "${SRC_DIR}/lexer_io.c" \
-    "${SRC_DIR}/main.c" \
+    "${SRC_DIR}/*.c" \
     -o "${BIN_DIR}/${OUTPUT_NAME}"
 
 # Check if compilation was successful
