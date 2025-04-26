@@ -1,3 +1,5 @@
+![](icon.jpeg)
+
 # Lexi C
 
 ## Overview
