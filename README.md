@@ -7,12 +7,6 @@
 This project is a **Lexical Analyzer for the C Programming Language**.  
 It processes C source code (after removing comments) and converts it into a structured sequence of tokens, capturing essential information like token type, value, line number, and column number.
 
-Each token is represented by a `tok_t` structure containing:
-- `char *value` — The actual text of the token
-- `tok_e type` — The type of the token (keyword, identifier, operator, preprocessor directive, etc.)
-- `size_t ln` — Line number where the token appears
-- `size_t col` — Column number where the token starts
-
 The analyzer also generates a detailed **log file** for every analyzed source file, saved automatically inside a `/log` directory.
 
 The project is modular and well-documented using **Doxygen** for easy understanding and maintainability.
@@ -58,29 +52,35 @@ It provides:
 - **Writing** processed tokens and logs into output files.
 - **Memory-managed file operations** ensuring binary-safe reads and writes.
 
-### Main Structure
+### Struct
 
-- `fchnk_t`
-  - `char *buff`: Buffer containing file content.
-  - `size_t chksz`: Size of the data in the buffer.
+#### `fchnk_t`
+*Container for a storing file chunks.*
 
-### Key Functions
+| Field | Type    | Description |
+|-------|---------|-------------|
+| `buff` | `char *` | Buffer containing file content |
+| `chksz` | `size_t`  | Size of the data in the buffer |
 
-- `fchnk_t *fchnk_ctor()`
-  - Constructor for file chunk objects.
+### Functions
 
-- `void fchnk_dtor(fchnk_t *chnk)`
-  - Destructor for releasing file chunk memory.
+- **`fchnk_t *fchnk_ctor()`**
+  <br>Constructor for file chunk objects.
 
-- `fchnk_t *fchnk_ptor(char *const buff, const size_t chksz)`
-  - Initializes a file chunk with an existing buffer (ownership transferred).
+- **`void fchnk_dtor(fchnk_t *chnk)`**
+  <br>Destructor for releasing file chunk memory.
 
-- `bool fwrite_fchnk(const char *fname, const fchnk_t *chnk)`
-  - Writes a file chunk's content to a file.
+- **`fchnk_t *fchnk_ptor(char *const buff, const size_t chksz)`**
+  <br>Initializes a file chunk with an existing buffer (ownership transferred).
+
+- **`bool fwrite_fchnk(const char *fname, const fchnk_t *chnk)`**
+  <br>Writes a file chunk's content to a file.
  
 
-- `fchnk_t *get_fchnk(const char *fname)`
-  - Reads the full content of a file into a file chunk object (binary-safe).
+- **`fchnk_t *get_fchnk(const char *fname)`**
+  <br>Reads the full content of a file into a file chunk object (binary-safe).
+
+---
 
 # Lexer Validation
 
@@ -97,6 +97,8 @@ All functions are case-sensitive and follow standard C syntax rules.
 
 > **Note:**  
 > These are pure validation functions — they don't modify input or handle memory allocation.
+
+---
 
 # Lexer
 Lexical analyzer components for token processing.
@@ -185,22 +187,26 @@ Defines:
 
 ### Functions
 
-- **`tok_t *tok_ctor()`**  
+- **`tok_t *tok_ctor()`**
   <br>Allocates a new empty token.
 
-- **`tok_t **tok_nctor(size_t n)`**  
+- **`tok_t **tok_nctor(size_t n)`**
   <br>Allocates an array of `n` tokens.
 
-- **`tok_t *tok_ptor(char *value, tok_e type, size_t line, size_t col)`**  
+- **`tok_t *tok_ptor(char *value,
+                     tok_e type,
+                     size_t line,
+                     size_t col)`**
   <br>Allocates and initializes a token.
 
-- **`void tok_dtor(tok_t *tok)`**  
+- **`void tok_dtor(tok_t *tok)`**
   <br>Frees a token and its contents.
 
-- **`void printf_tok(const tok_t *tok)`**  
+- **`void printf_tok(const tok_t *tok)`**
   <br>Prints token details to console.
 
-- **`bool fwrite_tok(FILE *fp, const tok_t *tok)`**  
+- **`bool fwrite_tok(FILE *fp,
+                     const tok_t *tok)`**
   <br>Writes token details to a file.
 
 ---
@@ -235,13 +241,15 @@ Manages:
 - **`void tokset_dtor(tokset_t *set)`**
   <br>Frees the memory associated with a token set.
 
-- **`size_t cnt_toktyp(const tokset_t *const set, const tok_e type)`**
+- **`size_t cnt_toktyp(const tokset_t *const set,
+                       const tok_e type)`**
   <br>Counts the number of tokens of a specific type in a token set.
 
 - **`void printf_tokset(const tokset_t *const set)`**
   <br>Prints the contents of a token set to the standard output.
   
-- **`bool fwrite_tokset(FILE *fp, const tokset_t *const set)`**
+- **`bool fwrite_tokset(FILE *fp,
+                        const tokset_t *const set)`**
   <br>Writes the contents of a token set to a file.
 
 ---
@@ -255,7 +263,14 @@ The `lexer_tokenize.h` header file implements core functions for the tokenizatio
 - **`size_t tokcnt(const char *const line)`**
   <br>Counts the number of tokens in a given string (or file content).
 
-- **`void toknz_segtoset(tokset_t *const set, const size_t token_index, const char *const line, const size_t start, const size_t end, const size_t line_no, const tokcat_e category, const size_t column)`**
+- **`void toknz_segtoset(tokset_t *const set,
+                         const size_t token_index,
+                         const char *const line,
+                         const size_t start,
+                         const size_t end,
+                         const size_t line_no,
+                         const tokcat_e category,
+                         const size_t column)`**
   <br>Tokenizes a segment of a line and stores the resulting token in the token set.
 
 - **`tokset_t *toknz(const char *const line)`**
