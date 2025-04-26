@@ -50,3 +50,17 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+# System files
+.DS_Store
+
+# IDE files
+*.sublime-workspace
+*.sublime-project
+
+# Build directories
+build/
+
+# Binary files
+bin/
