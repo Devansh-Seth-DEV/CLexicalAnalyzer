@@ -10,7 +10,7 @@ It processes C source code (after removing comments) and converts it into a stru
 The analyzer also generates a detailed **log file** for every analyzed source file, saved automatically inside a `/log` directory.
 
 The project is modular and well-documented using **Doxygen** for easy understanding and maintainability.
-You can find the full HTML documentation [here](docs/html/index.html)
+You can find the full HTML documentation [here](https://devansh-seth-dev.github.io/LexiC/)
 
 ---
 
