@@ -1,4 +1,4 @@
-# C Lexical Analyzer
+# Lexi C
 
 ## Overview
 
