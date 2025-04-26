@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lexical Analyzer: Main Page</title>
+<title>Lexical Analyzer: C:/Users/sethm/GitWorkspace/C Projects/LexiC/headers/lexer_tokenize.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('index.html',''); initResizable(true); });
+$(function(){initNavTree('lexer__tokenize_8h.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -102,15 +102,46 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Lexical Analyzer Documentation</div></div>
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">lexer_tokenize.h File Reference<div class="ingroups"><a class="el" href="group___lexer.html">Lexical Analyzer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<a href="doxygen_crawl.html"></a>
-</div><!-- contents -->
+
+<p>Tokenization core implementation.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="lexer_8h_source.html">lexer.h</a>&quot;</code><br />
+</div>
+<p><a href="lexer__tokenize_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae0c0a7a1181c1edc46cd937176f4c37c" id="r_gae0c0a7a1181c1edc46cd937176f4c37c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___tokenization.html#gae0c0a7a1181c1edc46cd937176f4c37c">tokcnt</a> (const char *const line)</td></tr>
+<tr class="memdesc:gae0c0a7a1181c1edc46cd937176f4c37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of tokens in a given string (or file content).  <br /></td></tr>
+<tr class="separator:gae0c0a7a1181c1edc46cd937176f4c37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga743b8789dd6718aae4459fbd0b5cba95" id="r_ga743b8789dd6718aae4459fbd0b5cba95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___tokenization.html#ga743b8789dd6718aae4459fbd0b5cba95">toknz_segtoset</a> (<a class="el" href="structtokset__t.html">tokset_t</a> *const set, const size_t token_index, const char *const line, const size_t start, const size_t end, const size_t line_no, const <a class="el" href="group___token_classification.html#ga15a4f5fa9017a6c10fa9e79e2b4cd982">tokcat_e</a> category, const size_t column)</td></tr>
+<tr class="memdesc:ga743b8789dd6718aae4459fbd0b5cba95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizes a segment of a line and stores the resulting token in the token set.  <br /></td></tr>
+<tr class="separator:ga743b8789dd6718aae4459fbd0b5cba95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga221db00549e4cd6c05c5e809b13bce26" id="r_ga221db00549e4cd6c05c5e809b13bce26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtokset__t.html">tokset_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___tokenization.html#ga221db00549e4cd6c05c5e809b13bce26">toknz</a> (const char *const line)</td></tr>
+<tr class="memdesc:ga221db00549e4cd6c05c5e809b13bce26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizes a line (or multiple lines of code) into a set of tokens.  <br /></td></tr>
+<tr class="separator:ga221db00549e4cd6c05c5e809b13bce26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Tokenization core implementation. </p>
+<p>Handles the conversion of source code into token streams:</p><ul>
+<li>Counting tokens in source strings</li>
+<li>Segmenting code into lexical units</li>
+<li>Full tokenization pipeline</li>
+</ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="lexer_8h.html" title="Lexical analyzer components for token processing.">lexer.h</a> For token type definitions </dd>
+<dd>
+<a class="el" href="group___token_validation.html" title="Token validation functions for lexical analysis.">Token Validation</a> For pattern checking rules </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li><li class="navelem"><a class="el" href="lexer__tokenize_8h.html">lexer_tokenize.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
