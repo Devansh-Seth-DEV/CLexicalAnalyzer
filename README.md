@@ -1,4 +1,7 @@
-![](icon.jpeg)
+![](icon.jpeg) <br>
+![GitHub License](https://img.shields.io/github/license/Devansh-Seth-DEV/LexiC)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Devansh-Seth-DEV/LexiC)
+
 
 # Lexi C
 
