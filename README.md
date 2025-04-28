@@ -1,7 +1,8 @@
 ![](icon.jpeg) <br>
 ![GitHub License](https://img.shields.io/github/license/Devansh-Seth-DEV/LexiC)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Devansh-Seth-DEV/LexiC)
-
+![OS](https://img.shields.io/badge/OS-Linux-blue?logo=linux&logoColor=white)
+![OS](https://img.shields.io/badge/OS-macOS-lightgrey?logo=apple&logoColor=white)
 
 # Lexi C
 
