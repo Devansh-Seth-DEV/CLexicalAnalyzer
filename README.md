@@ -45,6 +45,15 @@ To use the compile script:
 chmod +x compile.sh
 ```
 
+### Run
+
+To run the LexiC:
+
+```bash
+./bin/lexer <source-code-file>
+```
+
+
 ---
 
 ## File I/O (LexerIO)
