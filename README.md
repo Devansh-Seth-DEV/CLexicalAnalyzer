@@ -53,6 +53,11 @@ To run the LexiC:
 ./bin/lexer <source-code-file>
 ```
 
+```bash
+//Example
+./bin/lexer example_code.c
+```
+
 
 ---
 
