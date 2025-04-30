@@ -9,7 +9,7 @@
 ## Overview
 
 This project is a **Lexical Analyzer for the C Programming Language**.  
-It processes C source code (after removing comments) and converts it into a structured sequence of tokens, capturing essential information like token type, value, line number, and column number.
+It processes C source code (after removing comments, there should be no comments in the source code before sending the file as input) and converts it into a structured sequence of tokens, capturing essential information like token type, value, line number, and column number.
 
 The analyzer also generates a detailed **log file** for every analyzed source file, saved automatically inside a `/log` directory.
 
